@@ -60,11 +60,15 @@ namespace Calculator
                         result = firstNumber / secondNumber;
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Неизвестный оператор.");
                         break;
                 }
 
                 Console.Write("Результат:                                    ");
                 Console.WriteLine(result);
+
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("Введите y или Y, если хотите продолжить:      ");
                 string? str = Console.ReadLine();
                 if (str == "y" || str == "Y")
