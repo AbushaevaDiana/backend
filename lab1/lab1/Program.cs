@@ -10,13 +10,39 @@ namespace Calculator
             while (!endOfProgram)
             {
                 endOfProgram = true;
+                double firstNumber;
+                double secondNumber;
                 Console.Write("Введите первое число:                         ");
-                double firstNumber = Convert.ToInt32(Console.ReadLine());
+                firstNum:
+                try
+                {
+                    firstNumber = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ошибка! вы ввели не число\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("Введите первое число:                         ");
+                    goto firstNum;
+                }
                 Console.Write("Введите действие над числами(+, -, *, /):     ");
                 string? action = Console.ReadLine();
                 Console.Write("Введите второе число:                         ");
-                double secondNumber = Convert.ToInt32(Console.ReadLine());
-                
+                secondNum:
+                try
+                {
+                    secondNumber = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ошибка! вы ввели не число\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("Введите второе число:                         ");
+                    goto secondNum;
+                }
+
                 double result = double.NaN;
 
                 switch (action)
