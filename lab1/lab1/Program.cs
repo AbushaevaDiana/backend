@@ -6,39 +6,48 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            int count = 1;
-            while (count == 1)
+            bool endOfProgram = false;
+            while (!endOfProgram)
             {
-                Console.Write("Введите первое число:                  ");
+                endOfProgram = true;
+                Console.Write("Введите первое число:                         ");
                 int first_number = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите второе число:                  ");
-                int second_number = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите действие над числами(+,-,*,/): ");
+                Console.Write("Введите действие над числами(+, -, *, /):     ");
                 string? action = Console.ReadLine();
+                Console.Write("Введите второе число:                         ");
+                int second_number = Convert.ToInt32(Console.ReadLine());
+                
                 int result = 0;
 
-                if (action == "+")
+                switch (action)
                 {
-                    result = first_number + second_number;
+                    case "+":
+                        result = first_number + second_number;
+                        break;
+                    case "-":
+                        result = first_number - second_number;
+                        break;
+                    case "*":
+                        result = first_number * second_number;
+                        break;
+                    case "/":
+                        result = first_number / second_number;
+                        break;
+                    default:
+                        break;
                 }
-                if (action == "-")
-                {
-                    result = first_number - second_number;
-                }
-                if (action == "*")
-                {
-                    result = first_number * second_number;
-                }
-                if (action == "/")
-                {
-                    result = first_number / second_number;
-                }
-                Console.Write("Результат:                             ");
+
+                Console.Write("Результат:                                    ");
                 Console.WriteLine(result);
-                Console.Write("Введите 1, если хотите продолжить: ");
-                count = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Введите y или Y, если хотите продолжить:      ");
+                string? str = Console.ReadLine();
+                if (str == "y" || str == "Y")
+                {
+                    endOfProgram = false;
+                }
                 Console.WriteLine();
             }
+            Console.WriteLine("Спасибо за работу. До свидания.");
 
         }
     }
