@@ -12,6 +12,7 @@ namespace Calculator
                 endOfProgram = true;
                 double firstNumber;
                 double secondNumber;
+
                 Console.Write("Введите первое число:                         ");
                 firstNum:
                 try
@@ -26,8 +27,10 @@ namespace Calculator
                     Console.Write("Введите первое число:                         ");
                     goto firstNum;
                 }
+
                 Console.Write("Введите действие над числами(+, -, *, /):     ");
                 string? action = Console.ReadLine();
+
                 Console.Write("Введите второе число:                         ");
                 secondNum:
                 try
