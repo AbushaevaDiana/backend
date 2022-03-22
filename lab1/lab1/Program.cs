@@ -11,27 +11,27 @@ namespace Calculator
             {
                 endOfProgram = true;
                 Console.Write("Введите первое число:                         ");
-                double first_number = Convert.ToInt32(Console.ReadLine());
+                double firstNumber = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Введите действие над числами(+, -, *, /):     ");
                 string? action = Console.ReadLine();
                 Console.Write("Введите второе число:                         ");
-                double second_number = Convert.ToInt32(Console.ReadLine());
+                double secondNumber = Convert.ToInt32(Console.ReadLine());
                 
                 double result = double.NaN;
 
                 switch (action)
                 {
                     case "+":
-                        result = first_number + second_number;
+                        result = firstNumber + secondNumber;
                         break;
                     case "-":
-                        result = first_number - second_number;
+                        result = firstNumber - secondNumber;
                         break;
                     case "*":
-                        result = first_number * second_number;
+                        result = firstNumber * secondNumber;
                         break;
                     case "/":
-                        result = first_number / second_number;
+                        result = firstNumber / secondNumber;
                         break;
                     default:
                         break;
