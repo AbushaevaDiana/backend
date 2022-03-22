@@ -11,13 +11,13 @@ namespace Calculator
             {
                 endOfProgram = true;
                 Console.Write("Введите первое число:                         ");
-                int first_number = Convert.ToInt32(Console.ReadLine());
+                double first_number = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Введите действие над числами(+, -, *, /):     ");
                 string? action = Console.ReadLine();
                 Console.Write("Введите второе число:                         ");
-                int second_number = Convert.ToInt32(Console.ReadLine());
+                double second_number = Convert.ToInt32(Console.ReadLine());
                 
-                int result = 0;
+                double result = double.NaN;
 
                 switch (action)
                 {
